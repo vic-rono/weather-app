@@ -6,6 +6,8 @@ import Navbar from './components/Navbar.js'
 
 
 
+
+
 class App extends React.Component {
 
   state = {
@@ -37,9 +39,8 @@ class App extends React.Component {
       pressure: res.data.current.pressure,
       precip: res.data.current.precip,
       humidity: res.data.current.humidity,
-      img: res.data.current.weather_icons
     }
-  
+     
     this.setState({data:weatherData})
 
   })
@@ -63,12 +64,13 @@ changeWeather = (e) =>{
       pressure: res.data.current.pressure,
       precip: res.data.current.precip,
       humidity: res.data.current.humidity,
-      img: res.data.current.weather_icons
+  
      }
+     console.log(weatherData)
      this.setState({data: weatherData})
     })
-    
-}
+  }
+
 render(){
   return (
     <div className="App">

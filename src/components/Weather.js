@@ -1,21 +1,20 @@
 import React from 'react'
 
-function Weather({ weatherData }) {
-    const { temperature, description, location, region, country, wind_speed, pressure, precip, humidity, img } = weatherData
+const Weather = ({ weatherData }) => {
+    const { temperature, description, location, region, country, wind_speed, pressure, precip, humidity } = weatherData
     return (
-        <div>
-            <div className="user-weather">
+        
+            <div className="user-weather mb-3">
             <div className="row">
                 <div className="col-md-3 weather-temp">
                     <h1>{temperature}<sup>o</sup>C , {description}</h1>
                     <h4>{location}</h4>
-                    <p>{region} , {country}</p>
+                    <p>{region} ,{country}</p>
                 </div>
 
-                <div className="col-md-9">
-                    <img className="mainImg" src={img} alt="weather-img" />
-                </div>
+                
             </div>
+            
 
             <div className="row">
                 <div className="col-md-3 weather-info">
@@ -24,7 +23,7 @@ function Weather({ weatherData }) {
                 </div>
 
                 <div className="col-md-3 weather-info">
-                    <p><b>Preassure</b>(millibar)</p>
+                    <p><b>Pressure</b>(millibar)</p>
                     <h2>{pressure}</h2>
                 </div>
 
@@ -40,9 +39,11 @@ function Weather({ weatherData }) {
 
             </div>
         </div>
-        </div>
+        
     )
 }
+
+
 
 export default Weather
 
