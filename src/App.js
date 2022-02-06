@@ -66,7 +66,7 @@ changeWeather = (e) =>{
       humidity: res.data.current.humidity,
   
      }
-     console.log(weatherData)
+     
      this.setState({data: weatherData})
     })
   }
