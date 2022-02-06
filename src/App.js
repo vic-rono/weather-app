@@ -43,8 +43,6 @@ class App extends React.Component {
      
     this.setState({data:weatherData})
 
-  }).catch((err) => {
-    console.log(err)
   })
 })
 }
@@ -70,9 +68,7 @@ changeWeather = (e) =>{
   
      }
      
-     this.setState({data: weatherData})
-    }).catch((err) => {
-      console.log(err)
+    this.setState({data: weatherData})
     })
   }
 
