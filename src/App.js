@@ -41,7 +41,7 @@ class App extends React.Component {
       humidity: res.data.current.humidity,
     }
      
-    this.setState({data:weatherData})
+    return this.setState({data:weatherData})
 
   })
 })
@@ -55,7 +55,8 @@ changeWeather = (e) =>{
     e.preventDefault();
 
     Axios.get(`http://api.weatherstack.com/current?access_key=${process.env.REACT_APP_KEY}&query=${this.state.inputData}`).then(res=>{
-     let weatherData = { location: res.data.location.name,
+     let weatherData = { 
+      location: res.data.location.name,
       temperature: res.data.current.temperature,
       description: res.data.current.weather_descriptions[0],
       region: res.data.location.region,
@@ -67,7 +68,7 @@ changeWeather = (e) =>{
   
      }
      
-     this.setState({data: weatherData})
+     return this.setState({data: weatherData})
     })
   }
 
