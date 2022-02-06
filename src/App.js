@@ -55,7 +55,7 @@ changeWeather = (e) =>{
     e.preventDefault();
 
     Axios.get(`http://api.weatherstack.com/current?access_key=${process.env.REACT_APP_KEY}&query=${this.state.inputData}`).then(res=>{
-     let weatherData = { 
+     let weatherData =  { 
       location: res.data.location.name,
       temperature: res.data.current.temperature,
       description: res.data.current.weather_descriptions[0],
